@@ -5,9 +5,9 @@ from flask_migrate import Migrate
 
 
 #if os.environ['ENV_TYPE'] == 'Development':
-from config.development import Development as Conf
+#    from config.development import Development as Conf
 #elif os.environ['ENV_TYPE'] == 'Production':
-#    from config.production import Production as Conf
+from config.production import Production as Conf
 
 db = SQLAlchemy()
 
