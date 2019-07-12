@@ -5,12 +5,12 @@ class Production(Config):
 
     ENV_TYPE = "Production" 
 
-    DB_NAME = "dei9hiiejp9lcl"
-    DB_USER = "uygbizvsfjuwas"
-    DB_PASSWORD = "487e70d4254d0b11e6be357ddcf8d6a38aa10bedc19fe0499950c6434bc22a62"
-    DB_HOST = "ec2-174-129-226-232.compute-1.amazonaws.com"
+    DB_NAME = "d45su9ogur6ldl"
+    DB_USER = "joyosfgmtisprr"
+    DB_PASSWORD = "facae4452c2839f29908a13ef6063141606d3b7921c9d98f23dc6c1bfd866fd0"
+    DB_HOST = "ec2-54-220-0-91.eu-west-1.compute.amazonaws.com"
     DB_PORT = 5432
-    SQLALCHEMY_DATABASE_URI = f'postgresql+psycopg2://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_NAME}'
+    SQLALCHEMY_DATABASE_URI = "postgres://joyosfgmtisprr:facae4452c2839f29908a13ef6063141606d3b7921c9d98f23dc6c1bfd866fd0@ec2-54-220-0-91.eu-west-1.compute.amazonaws.com:5432/d45su9ogur6ldl"
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
     username = "Aleksa"
