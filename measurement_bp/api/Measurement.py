@@ -4,7 +4,7 @@ from flask_restplus import Resource
 from measurement_bp import measurements_api
 from app import Conf
 from measurement_bp.models.Measurement import Measurement
-from measurement_bp.schemas.CreateMeasurementSchema import CreateMeasurement
+from measurement_bp.schemas.CreateMeasurementSchema import CreateMeasurementSchema
 from marshmallow import ValidationError
 
 from functools import wraps
@@ -32,13 +32,11 @@ class Measurements(Resource):
     def post(self):
         data = request.get_json(force=True)
 
-        validated_data = CreateMeasurement().load(data)
+        validated_data = CreateMeasurementSchema().load(data)
         measurement = Measurement(air_quality=data['air_quality'], temperature = data["temperature"], humidity = data["humidity"])
         db.session.add(measurement)
         db.session.commit()
 
 
         return {'message': 'Inserted measurement.'}, 200
-
- 
 

@@ -12,7 +12,7 @@ from flask import request
 class GetMeasurement(Resource):
     
     def get(self):
-        data = db.session.query(Measurement).all()
+        data = db.session.query(Measurement)
         data = data[-1]
         get_schema = GetMeasurementSchema().dump(data)
         return get_schema

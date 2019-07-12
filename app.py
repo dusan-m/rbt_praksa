@@ -16,18 +16,19 @@ from marshmallow import ValidationError
 from flask import jsonify
 from measurement_bp import measurements_bp
 from measurement_bp.models.Measurement import Measurement
+from measurement_bp.models.Users import Users
 
 def create_app(conf):
     app = Flask(__name__)
     app.config.from_object(conf)
     db.init_app(app)
 
+    migrate = Migrate(app, db)
     app.register_blueprint(measurements_bp)
 
     return app
     
 app = create_app(Conf)
-migrate = Migrate(app, db)
 
 @app.errorhandler(ValidationError)
 def _on_validation_error(ex):
