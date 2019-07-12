@@ -4,10 +4,10 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 
 
-if os.environ['ENV_TYPE'] == 'Development':
-    from config.development import Development as Conf
-elif os.environ['ENV_TYPE'] == 'Production':
-    from config.production import Production as Conf
+#if os.environ['ENV_TYPE'] == 'Development':
+from config.development import Development as Conf
+#elif os.environ['ENV_TYPE'] == 'Production':
+#    from config.production import Production as Conf
 
 db = SQLAlchemy()
 
